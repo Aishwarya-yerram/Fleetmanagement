@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h1
+      Welcome to FleetManagement, #{@user.name}
+    %p
+      You have successfully signed up ,
+      your username is: #{@user.name}.
+      %br
+    %p
+      To login to the site, just follow this link:
+      = link_to @url+'login path', users_signin_url
+    %p Thanks for joining and have a great day!
+
+    %p 
+      Hello there this is our main page

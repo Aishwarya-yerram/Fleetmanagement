@@ -1,0 +1,19 @@
+%body
+	.styling
+		%center
+			%h1{:align => "center"} Fleet Management
+			%h4{:align => "center"} Hi, welcome  
+
+		
+			%h4{:align => "center"} If your are new user click 
+			%br
+			%br
+		- if @current_user.present?
+			%p{:align => "center"}
+				%a.btn.btn-primary.btn-lg.btn-xlarge{href:"", role:"button"} Dashboard	
+		-	else
+
+			%p{:align => "center"}
+				%a.btn.btn-primary.btn-lg.btn-xlarge{href:"users/new", role:"button"} Signup
+			
+  		

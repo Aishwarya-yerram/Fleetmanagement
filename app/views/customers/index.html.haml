@@ -1,0 +1,35 @@
+%h1{:style => 'color: green'} Here are all the customers you have registered
+
+.row
+	.col-xs-8.col-xs-offset-2
+		.well.well-lg
+			%table{border: 1}
+				%thead
+					%tr
+						%th
+							Created by:
+							&nbsp;
+						%th 
+							Name:
+							&nbsp;
+						%th
+							Truck type:
+							&nbsp;
+						%th
+							Number of trucks:
+							&nbsp;
+						%th
+							Status:
+							&nbsp;
+						
+
+					%tr
+				- @customers.each do |customer| 
+					%tr
+						%td= customer.created_by.name 
+						%td= customer.username
+						%td= customer.trucktype_needed
+						%td= customer.numof_trucks						
+						%td= customer.status
+							
+					

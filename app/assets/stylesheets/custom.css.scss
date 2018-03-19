@@ -1,0 +1,57 @@
+$navbar-default-bg: #45484c;
+
+@import "bootstrap-sprockets";
+
+@import "bootstrap";
+
+#login{
+	color: #ffff;
+	font-weight: bold;
+}
+#logo{
+	color: #f202ff;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	font-weight: bold;
+}
+
+body{
+	background-color: #61ccb8; 
+}
+
+label{
+	color: #ff0400;
+}
+
+.styling{
+	background-image: asset-url('fm9.png');
+	background-size: cover;
+	height: 550px;
+}
+
+.styling h1{
+	color: #514e51;
+	text-align: center;
+	margin-bottom: 30px;
+	letter-spacing: -1px;
+	font-weight: bold;
+}
+
+.styling h4{
+	color: #f202ff;
+	font-weight: bold;
+}
+
+.login{
+	padding: 0.5em;
+}
+.simple_form label {
+  float: left;
+  width: 100px;
+  text-align: right;
+  margin: 5px 15px;
+}
+
+.simple_form div.input {
+  margin-bottom: 10px;
+}

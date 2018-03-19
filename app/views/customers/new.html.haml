@@ -1,0 +1,31 @@
+%h2 Signup page
+
+
+- if @customer.errors.any?
+	.row
+		.col-xs-8.col-xs-offset-2
+			.panel.panel-danger
+				.panel-heading
+					%h2.panel-title
+						= pluralize(@customer.errors.count, "error")
+						prohibited user account from being saved:
+					.panel-body
+						%ul
+						- @customer.errors.full_messages.each do|msg|
+							%li= msg
+
+= simple_form_for @customer do |f|
+	
+	= f.input :username
+	%br
+	= f.input :email
+	%br
+	= f.input :phonenum
+	%br
+	= f.input :trucktype_needed
+	%br
+	= f.input :expected_rent
+	%br
+	= f.input :numof_trucks
+	%br
+	= f.button :submit

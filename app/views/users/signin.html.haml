@@ -1,0 +1,18 @@
+%h1 Hi welcome to login page
+
+= form_tag users_login_path(@user) do  
+	= label_tag 'name', 'Name'
+	.login
+		= text_field_tag 'name'
+	%br
+	%br
+	= label_tag 'password', 'Password'
+	.login
+		= password_field_tag 'password'
+	%br
+	%br
+	
+	= submit_tag 'login'
+%br
+%br
+

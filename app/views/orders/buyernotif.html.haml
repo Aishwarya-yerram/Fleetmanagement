@@ -1,0 +1,32 @@
+.row
+	.col-xs-8.col-xs-offset-2
+		.well.well-lg
+			%table{border: 1}
+				%thead
+					%tr
+						%th
+							Customer Name:
+							&nbsp;
+						%th
+							Truck type:
+							&nbsp;
+						%th
+							Rent:
+							&nbsp;
+						
+
+					%tr
+				- @order.each do |order| 
+					%tr
+						%td= order.customer.username 
+						%td= order.cust_trucktype
+						%td= order.vendor_rent
+						%td
+							= form_tag orders_accept_path, method: :post do
+								= submit_tag 'Accept'
+					
+							= form_tag orders_decline_path, method: :post do
+								= submit_tag 'Decline'
+				
+		
+			

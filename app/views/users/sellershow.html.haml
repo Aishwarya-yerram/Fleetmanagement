@@ -1,0 +1,28 @@
+%h1{:style => 'color: green'}These are the vendors you have registered
+.row
+	.col-xs-8.col-xs-offset-2
+		.well.well-lg
+			%table{border: 1}
+				%thead
+					%tr
+						%th
+							Company Name
+						%th
+							Number of trucks
+						%th
+							Truck type
+						%th
+							Rent of truck
+						%th
+							Contact number
+					%tr
+				- @seller.vendors.each do |vendor| 
+					%tr
+						%td= vendor.companyname
+						%td= vendor.numof_trucks
+						%td= vendor.trucktype						
+						%td= vendor.rentof_truck
+						%td= vendor.phonenum
+						
+					
+						

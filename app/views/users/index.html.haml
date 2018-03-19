@@ -1,0 +1,50 @@
+
+.row
+-	if @users.present?
+	.col-xs-8.col-xs-offset-2
+		.well.well-lg
+			%table{border: 1}
+				%thead
+					%tr
+						%th
+							Name
+						%th
+							Type
+					%tr
+				- @users.each do |user| 
+					%tr
+						%td= user.name
+						%td= user.type
+						%td
+							= form_tag users_accept_path, method: :post do
+								= submit_tag 'Accept'
+						%td
+							= form_tag users_decline_path, method: :post do
+								= submit_tag 'Decline'
+- else
+	%h2 There are no seller requested yet
+.row
+- if @userb.present?
+	.col-xs-8.col-xs-offset-2
+		.well.well-lg
+			%table{border: 1}
+				%thead
+					%tr
+						%th 
+							Name
+						%th
+							Type
+					%tr
+				- @usersb.each do |user| 
+					%tr
+						%td= user.name
+						%td= user.type
+						%td
+							= form_tag users_buyeraccept_path, method: :post do
+								= submit_tag 'Accept'
+						%td
+							= form_tag users_buyerdecline_path, method: :post do
+								= submit_tag 'Decline'
+- else
+	%br 
+	%h2 There are no buyer yet requested

@@ -1,0 +1,36 @@
+%h2 Signup page
+
+
+- if @vendor.errors.any?
+	.row
+		.col-xs-8.col-xs-offset-2
+			.panel.panel-danger
+				.panel-heading
+					%h2.panel-title
+						= pluralize(@vendor.errors.count, "error")
+						prohibited user account from being saved:
+					.panel-body
+						%ul
+						- @vendor.errors.full_messages.each do|msg|
+							%li= msg
+
+= simple_form_for @vendor do |f|
+
+	= f.input :companyname
+	%br
+	= f.input :email
+	%br
+	= f.input :phonenum
+	%br
+	= f.input :numof_trucks
+	%br
+	= f.label :trucktype
+	= f.select :trucktype, options_for_select(%w[CO-40T-FL MO-40T-FL CO-24T-FL MO-24T-FL]) 
+	%br
+	= f.input :rentof_truck
+	%br
+	= f.input :taxid
+	%br
+	= f.input :gstid
+	%br
+	= f.button :submit

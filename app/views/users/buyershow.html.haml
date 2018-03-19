@@ -1,0 +1,39 @@
+
+
+%h1{:style => 'color: green'}These are the customers you have registered
+.row
+	.col-xs-8.col-xs-offset-2
+		.well.well-lg
+			%table{border: 1}
+				%thead
+					%tr
+						%th
+							Name:
+							&nbsp;
+						%th 
+							Number of trucks:
+							&nbsp;
+						%th
+							Truck type:
+							&nbsp;
+						%th
+							Excepted rent:
+							&nbsp;
+						%th
+							Contact number:
+							&nbsp;
+						
+
+					%tr
+				- @buyer.customers.each do |customer| 
+					%tr
+						%td= customer.username 
+						%td= customer.numof_trucks
+						%td= customer.trucktype_needed
+						%td= customer.expected_rent						
+						%td= customer.phonenum
+						%td
+							= form_tag orders_path(buyer_id: @current_user, customer_id: customer.id, cust_trucktype: customer.trucktype_needed, status: "pending"), remote:true, method: :post do
+								= submit_tag 'Raise order'
+
+				
