@@ -1,24 +1,16 @@
-
-
 .row
-	.col-xs-8.col-xs-offset-2
-		.well.well-lg
-			%table{border: 1}
-				%thead
-					%tr
-						%th
-							Customer name
-						%th
-							Truck type needed
-					%tr
-				- @orders.each do |user| 
-					%tr
-						%td= user.customer.username
-						%td= user.cust_trucktype
-						%td= link_to 'Provide the rent', edit_order_path(user)
-/						%td
-/							= form_tag orders_accept_path, method: :post do
-/								= submit_tag 'Accept'
-/						%td
-/							= form_tag orders_decline_path, method: :post do
-/								= submit_tag 'Decline'
+  .col-xs-8.col-xs-offset-2
+    .well.well-lg
+      %table{border: 1}
+        %thead
+          %tr
+            %th
+              Customer name
+            %th
+              Truck type needed
+          %tr
+        - @orders.each do |user| 
+          %tr
+            %td= user.customer.username
+            %td= user.cust_trucktype
+            %td= link_to 'Provide the rent', edit_order_path(user)
